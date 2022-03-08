@@ -50,43 +50,38 @@ $(document).ready(function () {
         $('.botones button').toggle('fast');
     }
 
-    $('#monto').on('input',()=>{
+    $('#monto').on('input', () => {
         prestamo1.monto = $('#monto').val();
     });
 
-    $('#cuotas').on('input',()=>{
+    $('#cuotas').on('input', () => {
         prestamo1.cuotas = $('#cuotas').val();
     });
 
-    $('#generar').on('click', ()=>{
+    $('#generar').on('click', () => {
         calcularTasa();
         calcularCuota(prestamo1.monto, prestamo1.cuotas, prestamo1.tasa / 12);
         imprimirResultado();
         animacion();
-    }); 
-    
-    guardar.addEventListener('click', ()=>{
+    });
+
+    guardar.addEventListener('click', () => {
         guardarPrestamo();
 
     });
-    
-    cargar.addEventListener('click', ()=>{
+
+    cargar.addEventListener('click', () => {
         cargarPrestamo();
         imprimirResultado();
         animacion();
     });
-    
-    $('#volver').on('click', ()=>{
+
+    $('#volver').on('click', () => {
         animacion();
     });
 
 })
 
-
-
-
-
-$('#poronga').attr("disabled", true);
 
 
 /* mostrar input en otro lado ao vivo
