@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Credilandia</title>
+</head>
+
+<body>
+    <div>
+        <h2>Bienvenido!</h2>
+    <h4>Por favor ingrese el monto y la cantidad de cuotas del crédito que desea calcular. <br>La tasa será del 45%
+        anual para préstamos de hasta 24 cuotas, caso contrario será del 50%.
+    </h4>
+    
+    </div>
+    <div class="ingreso">
+        <form id="formulario" action="" class="formulario"></form>
+        <label for="monto">Monto crédito:</label><br>
+        <input type="number" id="monto" name="monto" placeholder="100000"><br>
+        <label for="cuotas">Cantidad de cuotas:</label><br>
+        <input type="number" id="cuotas" name="cuotas" placeholder="12"><br>
+    </div>
+    
+    <div class="resultado oculto">
+        <ul class="simulaciones">
+        </ul>
+    </div>
+
+    <div class="botones">
+        <button id="generar">Generar</button>
+        <button id="cargar">Cargar</button>
+        <button id="guardar" class="oculto">Guardar</button>
+        <button id="volver" class="oculto">Volver</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+    integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
+    crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+    integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+    crossorigin="anonymous"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/script.js"></script>
+   
+</body>
+</html>
