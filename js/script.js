@@ -81,13 +81,10 @@ $(document).ready(function () {
 
     function cargarPrestamo() {
         prestamo1 = JSON.parse(localStorage.getItem('producto1'));
-        calcularCuota(prestamo1.monto, prestamo1.cuotas, prestamo1.tasa / 12);
     }
 
     function animacion() {
-        $('.toggle').toggle('fast');
-        $('.resultado').toggle('fast');
-        $('.botones button').toggle('fast');
+        $('.toggle, .resultado, .botones button').toggle('fast');
     }
 
     $('#monto').on('input', () => {
@@ -114,6 +111,7 @@ $(document).ready(function () {
     cargar.addEventListener('click', () => {
         if (localStorage.length > 0) {
             cargarPrestamo();
+            calcularCuota(prestamo1.monto, prestamo1.cuotas, prestamo1.tasa / 12);
             imprimirResultado();
             animacion();
         } else {alert("No posee simulaciones guardadas.");}
