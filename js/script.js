@@ -124,11 +124,3 @@ $(document).ready(function () {
     });
 
 })
-
-
-
-/* mostrar input en otro lado ao vivo
-$('#nombre').on('input', ()=>{
-    $('#mostrarAca').text($('#nombre'.val()));
-})
-*/
