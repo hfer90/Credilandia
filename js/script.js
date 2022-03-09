@@ -3,7 +3,7 @@ const cuotas = document.getElementById('cuotas');
 const generar = document.getElementById('generar');
 const guardar = document.getElementById('guardar');
 const cargar = document.getElementById('cargar');
-const llenarTabla = document.querySelector('#lista-tabla tbody');
+const listaCuotas = document.querySelector('#listaTabla tbody');
 
 function prestamo(monto, cuotas, tasa, valorCuota) {
     this.monto = parseInt(monto);
@@ -22,8 +22,8 @@ $(document).ready(function () {
 
     function calcularCuota(monto, cuotas, tasa) {
 
-        while(llenarTabla.firstChild){
-            llenarTabla.removeChild(llenarTabla.firstChild);
+        while(listaCuotas.firstChild){
+            listaCuotas.removeChild(listaCuotas.firstChild);
         }
     
         let fechas = [];
@@ -53,7 +53,7 @@ $(document).ready(function () {
                 <td>${interes.toFixed(2)}</td>
                 <td>${monto.toFixed(2)}</td>
             `;
-            llenarTabla.appendChild(row)
+            listaCuotas.appendChild(row)
         }
     }
 
@@ -63,9 +63,11 @@ $(document).ready(function () {
         let items = [];
 
         let li = 
-        ` <li class="prestamoCalculado"> Monto Solicitado: ${prestamo1.monto}</li> 
-         <li class="prestamoCalculado"> Cuotas: ${prestamo1.cuotas}</li> 
-         <li class="prestamoCalculado"> Tasa asignada: ${prestamo1.tasa}</li> `;
+        ` <li class="prestamoCalculado"> Monto Solicitado: $${prestamo1.monto}</li> 
+         <li class="prestamoCalculado"> Cantidad de cuotas: ${prestamo1.cuotas}</li> 
+         <li class="prestamoCalculado"> Tasa asignada: ${prestamo1.tasa}%</li> 
+         <li class="prestamoCalculado"> Valor de cada cuota: ${prestamo1.valorCuota.toFixed(2)}</li>
+         `;
 
         items.push(li);
         
@@ -74,14 +76,16 @@ $(document).ready(function () {
 
     function guardarPrestamo() {
         localStorage.setItem('producto1', JSON.stringify(prestamo1));
+        alert("La simulación se guardó correctamente!");
     }
 
     function cargarPrestamo() {
         prestamo1 = JSON.parse(localStorage.getItem('producto1'));
+        calcularCuota(prestamo1.monto, prestamo1.cuotas, prestamo1.tasa / 12);
     }
 
     function animacion() {
-        $('.ingreso').toggle('fast');
+        $('.toggle').toggle('fast');
         $('.resultado').toggle('fast');
         $('.botones button').toggle('fast');
     }
@@ -95,7 +99,7 @@ $(document).ready(function () {
     });
 
     $('#generar').on('click', () => {
-        if (monto.value > 0 && cuotas.value > 0){
+        if (monto.value >= 50000 && monto.value <= 500000 && cuotas.value > 0){
             calcularTasa();
             calcularCuota(prestamo1.monto, prestamo1.cuotas, prestamo1.tasa / 12);
             imprimirResultado();

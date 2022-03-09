@@ -1,3 +1,48 @@
-.oculto {
-    display:none;
+
+header, body, footer, div  {
+    flex-direction: column;
+    align-self: center;
+    text-align: center;
 }
+header {
+    padding: 2% 0px;
+    background-color: gray;
+} 
+
+body {
+    background-color: rgb(149, 177, 149);
+}
+
+
+h1, h3, h6, .listaResumen {
+    margin: 2%;
+    color: black;
+}
+
+#listaCuotas {
+    align-self: center;
+}
+
+.toggle, .col-4{
+    display: inline;
+}    
+
+.prestamoCalculado {
+  font-weight: 700;
+}
+
+li {
+    list-style:none;
+}
+.oculto {
+        display:none;
+    }
+
+.btn {
+    background-color: gray;
+    color: black;
+    margin: 2% 1%;
+    font-size: 1rem;
+    border: 1.5px solid black;
+}
+      
