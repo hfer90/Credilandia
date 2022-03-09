@@ -6,13 +6,16 @@ header, body, footer, div  {
 }
 header {
     padding: 2% 0px;
-    background-color: gray;
+    background-color: rgb(204, 204, 204);
 } 
 
 body {
-    background-color: rgb(149, 177, 149);
+    background-color: rgb(185, 226, 253);
 }
 
+.input{
+    margin: 0.5%;
+}
 
 h1, h3, h6, .listaResumen {
     margin: 2%;
@@ -39,7 +42,7 @@ li {
     }
 
 .btn {
-    background-color: gray;
+    background-color: rgb(204, 204, 204);
     color: black;
     margin: 2% 1%;
     font-size: 1rem;

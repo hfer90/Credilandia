@@ -23,16 +23,23 @@
     <div class="toggle col-6">
         <h3>Bienvenido!</h2>
             <h6>Por favor, ingrese el monto y la cantidad de cuotas del crédito que desea calcular. <br>
-                Contará con una tasa del 45% para préstamos de hasta 24 cuotas inclusive, y una tasa del 50% para 36 cuotas o más.
+                Tasas actuales: <br>
+                12-24 cuotas = 45% anual <br>
+                36-60 cuotas = 50% anual
             </h6>
 
     </div>
     <div class="toggle col-6">
         <form id="formulario" action="" class="formulario"></form>
         <label for="monto">Monto crédito:</label><br>
-        <input type="number" id="monto" name="monto" placeholder="$50.000-$500.000"><br>
-        <label for="cuotas">Cantidad de cuotas:</label><br>
-        <input type="number" id="cuotas" name="cuotas" placeholder="12"><br>
+        <input type="number" id="monto" class="input" name="monto" placeholder="$50.000-$500.000"><br>
+        <select name="select" id="cuotas" class="input">
+            <option value="12">12 cuotas</option>
+            <option value="24">24 cuotas</option>
+            <option value="36">36 cuotas</option>
+            <option value="48">48 cuotas</option>
+            <option value="60">60 cuotas</option>
+        </select>
     </div>
 
     <div class="resultado oculto align-items-center">

@@ -12,7 +12,7 @@ function prestamo(monto, cuotas, tasa, valorCuota) {
     this.valorCuota = valorCuota;
 }
 
-var prestamo1 = new prestamo(0, 0, 0, 0);
+var prestamo1 = new prestamo(50000, 12, 45, 0);
 
 $(document).ready(function () {
 
@@ -99,7 +99,7 @@ $(document).ready(function () {
     });
 
     $('#generar').on('click', () => {
-        if (monto.value >= 50000 && monto.value <= 500000 && cuotas.value > 0){
+        if (monto.value >= 50000 && monto.value <= 500000){
             calcularTasa();
             calcularCuota(prestamo1.monto, prestamo1.cuotas, prestamo1.tasa / 12);
             imprimirResultado();
