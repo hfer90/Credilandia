@@ -58,15 +58,17 @@ $(document).ready(function () {
     }
 
     function imprimirResultado() {
-        $(".prestamo1").remove();
+        $('.prestamoCalculado').remove();
 
         let items = [];
 
-        for (const dato in prestamo1) {
-            let li = ` <li class="prestamo1">${dato}: ${prestamo1[dato]}</li> `;
-            items.push(li);
-        }
+        let li = 
+        ` <li class="prestamoCalculado"> Monto Solicitado: ${prestamo1.monto}</li> 
+         <li class="prestamoCalculado"> Cuotas: ${prestamo1.cuotas}</li> 
+         <li class="prestamoCalculado"> Tasa asignada: ${prestamo1.tasa}</li> `;
 
+        items.push(li);
+        
         $(".simulaciones").append(items);
     }
 
